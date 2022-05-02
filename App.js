@@ -8,12 +8,14 @@ export default function App() {
   const [task, setTask] = useState("");
   const [taskItems, setTaskItems] = useState([]);
 
+  // adding tasks
   const handleAddTask = () =>{
     Keyboard.dismiss();
-   setTaskItems([...taskItems, task]);
-   setTask("");
+    setTaskItems([...taskItems, task]);
+    setTask("");
   }
 
+  // deleting tasks
   const handleTaskCompletion = (index) =>{
     const newItems = [...taskItems];
     newItems.splice(index, 1);
@@ -24,7 +26,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.tasksWrapper}>
         <Text style={styles.sectionTitle}>
-          Today's tasks
+          React Native Todo App
         </Text>
         {/* todo container */}
         <View style={styles.items}>
